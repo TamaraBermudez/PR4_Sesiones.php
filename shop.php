@@ -32,7 +32,9 @@ if (isset($_POST['product'])) {
 
     if (
         isset($_SESSION['stock'][$product]) &&
-        $_SESSION['stock'][$product] >= 0 
+        //ANTES ERA >= QUE 0 PERO SI ES 0 NO DEJA HACER NDA
+        //LO CAMBIE A QUE SEA MAYOR Y YA
+        $_SESSION['stock'][$product] > 0 
     ) {
         // Increase quantity in cart
         if (!isset($_SESSION['cart'][$product])) {
@@ -49,7 +51,8 @@ if (isset($_POST['product'])) {
 // Calculate total price
 $totalPrice = 0;
 foreach ($_SESSION['cart'] as $item => $qty) {
-    $totalPrice = $products[$item]['price'] * $qty; 
+    //AÑADI EL + PORQ EL = SOLO GUARDABA EL PRECIO DEL ULTIMO
+    $totalPrice += $products[$item]['price'] * $qty; 
 }
 ?>
 

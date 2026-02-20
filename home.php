@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_unset();
+//BORRÉ EL SESSION_UNSET PORQUE HACE QUE TODO SE BORRE
 ?>
 <!DOCTYPE html>
 <html lang="en">

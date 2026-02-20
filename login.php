@@ -1,13 +1,15 @@
 <?php
 session_start();
 
+//AQUI EDITE UN SESSION (LO ELIMINE) PORQUE SE SOBREESCRIBÍA TODO
+//LO QUE HABIA BORRABA EL NOMBRE
 if (isset($_POST['username'])) {
     $_SESSION['user'] = $_POST['username'];
-    $_SESSION['user'] = $_POST['password'];
     $_SESSION['cart'] = [];
     header("Location: shop.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

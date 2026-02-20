@@ -301,7 +301,8 @@ if (!empty($_SESSION['cart'])) {
                 <div class="summary">
                     <div class="summary-item">
                         <span class="summary-label">Total Items</span>
-                        <span class="summary-value"><?php echo count($_SESSION['cart']); ?></span>
+                        <* CAMBIE EL COUNT POR ARRAY_SUM para q se sume porq count solo contaba lineas. *>
+                        <span class="summary-value"><?php echo array_sum($_SESSION['cart']); ?></span>
                     </div>
                     <div class="summary-item">
                         <span class="summary-label">Total Price</span>
